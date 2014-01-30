@@ -1,7 +1,7 @@
 # Simple table that represents the roll of a 6-sided die
 
 class Roll < ActiveRecord::Base
-  attr_accessible :value
+  # attr_accessible :value	# Rails 3 only. Not needed for this challenge.
 
   validates :value, :inclusion => { :in => (1..6), :message => "must be between 1 and 6" }
 

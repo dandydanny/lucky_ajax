@@ -1,5 +1,6 @@
 source :rubygems
-
+gem 'protected_attributes'
+	
 # PostgreSQL driver
 gem 'pg'
 
