@@ -13,6 +13,9 @@ $(document).ready(function () {
   	// Debug
   	console.log("detected form submit");
 
+  	// Fade out old die
+  	$( "#die" ).fadeTo( "slow", 0)
+
   	// Do AJAX post, method="post" action="/rolls"
   	$.post("/rolls");
 
@@ -24,6 +27,7 @@ $(document).ready(function () {
   	$( "#die" ).html( "<img src='" + rand+ ".png' title='"+ rand + "' alt='the roll'>");
   	$( "#die" ).css({ opacity: 0})
 		$( "#die" ).fadeTo( "slow", 1)
+		
   	// Prevent default POST action
   	event.preventDefault();
 	});
