@@ -7,9 +7,11 @@
   </form>
 
   <div id="die">
-    <% if @roll %>
-      <img src="/<%= @roll.value %>.png" title="<%= @roll.value %>" alt="the roll">
-    <% end %>
+    <!-- moved IMG tag to JS -->
   </div>
+
+  <script language="javascript">
+    document.write("<i>Page last refreshed on: "+document.lastModified+"<I>");
+  </script>
 
 </div>
