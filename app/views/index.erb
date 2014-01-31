@@ -1,17 +1,21 @@
 <div class="container">
-  <h1>Simplest Possible AJAX</h1>
-  <p>This contrived app will simulate a roll of a 6-sided die.</p>
-
+  <div>
+  <h1>LUCKY AJAX</h1>
+  <p>A single-page web app to simuate and record rolls of a 6-sided die.</p>
+  </div>
+  <div>
   <form method="post" action="/rolls">
-    <input type="submit" value="Roll the Die">
+    <input type="submit" value="ROLL IT!">
   </form>
-
+  </div>
   <div id="die">
     <!-- moved IMG tag to JS -->
   </div>
-
+  <div>
   <script language="javascript">
-    document.write("<i>Page last refreshed on: "+document.lastModified+"<I>");
+    document.write("<p><i>Page last refreshed on: "+document.lastModified+"</i></p>");
   </script>
 
+  <p><a href="https://twitter.com/dandydanny">@DandyDanny</a> AJAXfied and spiffified this on January 30, 2014</p>
+  </div>
 </div>
