@@ -14,35 +14,22 @@ $(document).ready(function () {
   	console.log("detected form submit");
 
   	// Fade out old die
-  	$( "#die" ).fadeTo( "slow", 0)
-
-  	// Do AJAX post, method="post" action="/rolls"
-  	$.post("/rolls");
+  	$( "#die" ).fadeTo( 0, 0)
 
   	// Generate a random number between 1~6
   	var rand = Math.floor((Math.random()*6)+1);
   	console.log(rand);
 		
   	//replace the contents of the "#die" DIV
-  	$( "#die" ).html( "<img src='" + rand+ ".png' title='"+ rand + "' alt='the roll'>");
+  	$( "#die" ).html( "<img src='" + rand + ".png' title='"+ rand + "' alt='the roll'>");
   	$( "#die" ).css({ opacity: 0})
 		$( "#die" ).fadeTo( "slow", 1)
-		
+
+  	// Do AJAX post, method="post" action="/rolls"
+  	$.post("/rolls", { value: rand });
+
   	// Prevent default POST action
   	event.preventDefault();
 	});
-
-	$( "form" ).submit(function( event ) {
-	  if ( $( "input:first" ).val() === "correct" ) {
-	    $( "span" ).text( "Validated..." ).show();
-	    return;
-	  }
-	 
-	  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
-	  event.preventDefault();
-	});
-
-
-
 });
 		
